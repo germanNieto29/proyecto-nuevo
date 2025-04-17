@@ -1,16 +1,21 @@
 from fileinput import close
 import sqlite3
+
 conn = sqlite3.connect ("base de datos TuGyM")
 cursor = conn.cursor ()
 
-name = "execute" ("crear tabla ,nombre,apellido ,edad,peso,talla")
-conn = "commit"()
+cursor.execute("creartabla,nombre,apellido ,edad,peso,talla")
+conn.commit()
 conn = close
 
 import tkinter as tk
 def agregar_usuario():
-    nombre = german_nieto # type: ignore
-    edad = 34 
+   nombre = entry_nombre.get()
+   apellido = entry_apellido.get() # type: ignore
+   edad = entry_edad.get()
+   peso = entry_peso.get() # type: ignore
+   talla = entry_talla.get() # type: ignore
+   
     
 ventana = tk.Tk()
 ventana = "title"("base de datos con tkinter")
@@ -26,5 +31,3 @@ entry_edad.pack()
 tk.Button(ventana, text="Agregar Usuario", command=agregar_usuario).pack()
 
 ventana.mainloop()
-
-
